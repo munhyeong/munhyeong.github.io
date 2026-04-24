@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="nav-link" data-view="viewGrid">home</a>
+    <a href="#" class="nav-link" data-view="viewMoon">moon</a>
+    <a href="#" class="nav-link" data-view="viewIndex">project</a>
+    <a href="#" class="nav-link">daily</a>
+  </nav>
+
+  <!-- 그리드 뷰 -->
+  <div class="view active" id="viewGrid">
+    <main class="grid-container" id="grid"></main>
+  </div>
+
+  <!-- moon 뷰 -->
+  <div class="view" id="viewMoon">
+    <div class="life-top">
+      <span class="life-timer" id="moonTimer">—</span>
+      <span class="life-meta" id="lifeMeta"></span>
+    </div>
+    <div class="life-grid-wrap">
+      <div id="lifeGrid"></div>
+    </div>
+  </div>
+
+  <!-- 인덱스 뷰 -->
+  <div class="view" id="viewIndex">
+    <div class="index-list" id="indexList"></div>
+  </div>
+
+  <!-- 호버 썸네일 -->
+  <img class="index-thumb" id="indexThumb" alt="" />
+
+  <!-- 팝업 -->
+  <div class="modal" id="modal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-panel" id="modalPanel">
+      <div class="rh rh-n"  data-dir="n"></div>
+      <div class="rh rh-s"  data-dir="s"></div>
+      <div class="rh rh-e"  data-dir="e"></div>
+      <div class="rh rh-w"  data-dir="w"></div>
+      <div class="rh rh-ne" data-dir="ne"></div>
+      <div class="rh rh-nw" data-dir="nw"></div>
+      <div class="rh rh-se" data-dir="se"></div>
+      <div class="rh rh-sw" data-dir="sw"></div>
+
+      <div class="modal-panel-header">
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-imgs" id="modalImgs">
+          <div class="modal-stage" id="modalStage"></div>
+          <div class="modal-nav">
+            <button class="modal-prev" id="modalPrev">&#8249;</button>
+            <span class="modal-counter" id="modalCounter"></span>
+            <button class="modal-next" id="modalNext">&#8250;</button>
+          </div>
+        </div>
+        <div class="modal-vids" id="modalVids"></div>
+        <div class="popup-desc" id="modalDesc"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
