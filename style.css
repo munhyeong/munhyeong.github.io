@@ -36,8 +36,7 @@ html {
 .nav-link {
   text-decoration: none;
   color: #111;
-  font-size: 25px;
-
+  font-size: 13px;
   letter-spacing: 0.02em;
   text-align: center;
 }
@@ -404,12 +403,13 @@ html {
 
 .index-row {
   display: grid;
-  grid-template-columns: 1fr 160px 60px;
+  grid-template-columns: 1fr auto auto;
   align-items: baseline;
   padding: 9px 0;
   border-bottom: 1px solid #bbb;
   cursor: pointer;
   gap: 24px;
+  min-width: 0;
 }
 
 .index-row:hover .index-name { text-decoration: underline; }
@@ -418,6 +418,10 @@ html {
   font-size: 14px;
   line-height: 1.4;
   color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .index-tag {
