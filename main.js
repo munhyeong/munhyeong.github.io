@@ -108,7 +108,7 @@ const projects = [
     year: '2024',
     thumb: { type: 'video', src: 'images/aimov_vid1.m4v' },
     images: [],
-    videos: [],
+    videos: ['images/aimov_vid1.m4v'],
     desc: {
       title: 'Aimov',
       meta: ['모션 그래픽', '2024년', '디지털 영상'],
@@ -398,10 +398,14 @@ function openModal(imgs, vids, desc) {
   };
 
   if (images.length > 0) {
-    // 첫 이미지 비율로 패널 크기 결정 후 표시
     setPanelToImage(images[0], show);
+  } else if (vids.length > 0) {
+    // 영상만 있는 경우: 16:9 기준으로 패널 크기 계산
+    const maxW = window.innerWidth * 0.55;
+    const vidH = (maxW - SIDE_PAD) * (9 / 16);
+    applyPanelSize(maxW, vidH + OVERHEAD);
+    show();
   } else {
-    // 영상만 있는 경우 기본 크기
     applyPanelSize(window.innerWidth * 0.42, window.innerHeight - NAV_H);
     show();
   }
